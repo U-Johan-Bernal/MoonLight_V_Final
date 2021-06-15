@@ -29,7 +29,7 @@ class App extends Component{
             .then(res=>res.json())
             .then(data=>{
                 console.log(data);
-                M.toast({html: 'Task Updated'});
+                M.toast({html: 'Producto Actualizado'});
                 this.setState({title:'', description: '', price:'', _id:''});
                 this.fetchTasks();
             });
@@ -45,7 +45,7 @@ class App extends Component{
                 .then(res=> res.json())
                 .then(data=>{
                     console.log(data)
-                    M.toast({html: 'Task Saved'})
+                    M.toast({html: 'Producto Guardado'})
                     this.setState({title:'', description: '', price:''});
                     this.fetchTasks();
                 })
@@ -78,7 +78,7 @@ class App extends Component{
             .then(res=>res.json())
             .then(data=>{
                 console.log(data);
-                M.toast({html: 'Task Deleted'});
+                M.toast({html: 'Producto Eliminado'});
                 this.fetchTasks();
             });
         }
@@ -110,12 +110,12 @@ class App extends Component{
         return(
             <div>
                 {/*NAVIGATION*/}
-                <nav className="light-blue darken-4">
+                <nav className="black darken-4">
                     <div className="container">
-                        <a className="bran-logo" href="/">MERN</a>
+                        <a className="bran-logo" href="/">MOONLIGHT</a>
                     </div>
                 </nav>
-
+                <hr></hr>
                 <div className="container">
                     <div className="row">
                         <div className="col s5">
@@ -125,23 +125,23 @@ class App extends Component{
 
                                         <div className="row">
                                             <div className="input-field col s12">
-                                                <input name="title" onChange={this.handleChange} type="text" placeholder="Task Name" value={this.state.title} />
+                                                <input name="title" onChange={this.handleChange} type="text" placeholder="Nombre Producto" value={this.state.title} />
                                             </div>
                                         </div>
 
                                         <div className="row">
                                             <div className="input-field col s12">
-                                                <textarea name="description" onChange={this.handleChange} className="materialize-textarea" placeholder="Task Description" value={this.state.description}/>
+                                                <textarea name="description" onChange={this.handleChange} className="materialize-textarea" placeholder="Descripción Producto" value={this.state.description}/>
                                             </div>
                                         </div>
 
                                         <div className="row">
                                             <div className="input-field col s12">
-                                                <input name="price" onChange={this.handleChange} type="text" placeholder="Task price" value={this.state.price}/>
+                                                <input name="price" onChange={this.handleChange} type="text" placeholder="Precio Producto" value={this.state.price}/>
                                             </div>
                                         </div>
-                                        <button className="btn light-blue darken-4">
-                                            Send
+                                        <button className="btn black darken-4">
+                                            Enviar
                                         </button>
                                     </form>
                                 </div>
@@ -151,9 +151,9 @@ class App extends Component{
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Description</th>
-                                        <th>Price</th>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Precio</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -165,8 +165,8 @@ class App extends Component{
                                                     <td>{task.description}</td>
                                                     <td>{task.price}</td>
                                                     <td>
-                                                        <button className="btn light-blue darken-4"><i className="material-icons" onClick={()=>this.editTask(task._id)}>edit</i></button>
-                                                        <button className="btn light-blue darken-4" style={{margin:'4px'}} onClick={()=>this.deleteTask(task._id)}><i className="material-icons">delete</i></button>
+                                                        <button className="btn black darken-4"><i className="material-icons" onClick={()=>this.editTask(task._id)}>edit</i></button>
+                                                        <button className="btn black darken-4" style={{margin:'4px'}} onClick={()=>this.deleteTask(task._id)}><i className="material-icons">delete</i></button>
                                                     </td>
                                                 </tr>
                                             )
@@ -177,6 +177,7 @@ class App extends Component{
                         </div>
                     </div>
                 </div>
+
             </div>
         )
     }
